@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: chois-backend-core
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: ''
+    namespace: chois
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: chois-backend-core/overlays/prod
+    repoURL: 'git@github.com:CChuYong/bsc-argocd-manifest.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

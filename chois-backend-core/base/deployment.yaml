@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chois-backend-core
+  namespace: chois
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: chois-backend-core
+  template:
+    metadata:
+      labels:
+        app: chois-backend-core
+    spec:
+      containers:
+        - name: webserver
+          image: 463935167443.dkr.ecr.ap-northeast-2.amazonaws.com/chois-backend-core-prod:f951f7fc95c5931bf6372fbc4ba540f3e47257cd
+          env:
+            - name: MYSQL_URL
+              valueFrom:
+                secretKeyRef:
+                  name: chois-backend-core-secret
+                  key: flyway-url
+            - name: MYSQL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: chois-backend-core-secret
+                  key: mysql-username
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: chois-backend-core-secret
+                  key: mysql-password
+            - name: SERVER_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: chois-backend-core-secret
+                  key: server-port
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /api/actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /api/actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
