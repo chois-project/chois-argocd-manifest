@@ -7,7 +7,7 @@ spec:
   hosts:
     - "chois-backend-bff.choisproject.chuyong.kr"
   gateways:
-    -chois-backend-bff
+    - chois-backend-bff
   http:
     - name: "default-routes"
       route:
