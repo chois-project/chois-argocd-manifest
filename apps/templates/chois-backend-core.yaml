@@ -12,7 +12,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: chois-backend-core/overlays/prod
-    repoURL: 'git@github.com:CChuYong/bsc-argocd-manifest.git'
+    repoURL: 'git@github.com:chois-project/chois-argocd-manifest.git'
     targetRevision: HEAD
   sources: []
   project: default
