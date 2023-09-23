@@ -4,4 +4,4 @@ resources:
 - ../../base
 images:
 - name: 463935167443.dkr.ecr.ap-northeast-2.amazonaws.com/chois-backend-bff-prod
-  newTag: 0d606b8
+  newTag: 9e7efd3
