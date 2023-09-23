@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: chois-backend-bff
+  namespace: chois
+spec:
+  hosts:
+    - "chois-backend-bff.choisproject.chuyong.kr"
+  gateways:
+    -chois-backend-bff
+  http:
+    - name: "default-routes"
+      route:
+        - destination:
+            host: chois-backend-bff
+            port:
+              number: 80

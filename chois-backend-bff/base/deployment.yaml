@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chois-backend-bff
+  namespace: chois
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chois-backend-bff
+  template:
+    metadata:
+      labels:
+        app: chois-backend-bff
+    spec:
+      containers:
+        - name: webserver
+          image: 463935167443.dkr.ecr.ap-northeast-2.amazonaws.com/chois-backend-bff-prod:f951f7fc95c5931bf6372fbc4ba540f3e47257cd
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
