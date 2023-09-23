@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chois-webview
+  namespace: chois-webview
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chois-webview
+  template:
+    metadata:
+      labels:
+        app: chois-webview
+    spec:
+      containers:
+        - name: web
+          image: 463935167443.dkr.ecr.ap-northeast-2.amazonaws.com/chois-webview-prod:e9f71c2
+          ports:
+            - containerPort: 3000
