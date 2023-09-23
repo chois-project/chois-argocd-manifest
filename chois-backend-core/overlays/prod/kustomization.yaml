@@ -4,4 +4,4 @@ resources:
 - ../../base
 images:
 - name: 463935167443.dkr.ecr.ap-northeast-2.amazonaws.com/chois-backend-core-prod
-  newTag: 1c31bcc
+  newTag: 721b780
