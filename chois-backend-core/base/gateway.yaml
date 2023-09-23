@@ -12,7 +12,7 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - "magcloud.chuyong.kr"
+        - "chois-backend-core.choisproject.chuyong.kr"
       tls:
         httpsRedirect: true
     - port:
@@ -20,4 +20,4 @@ spec:
         name: https
         protocol: HTTP
       hosts:
-        - 'magcloud.chuyong.kr'
+        - 'chois-backend-core.choisproject.chuyong.kr'

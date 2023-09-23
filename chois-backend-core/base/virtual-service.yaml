@@ -5,7 +5,7 @@ metadata:
   namespace: chois
 spec:
   hosts:
-    - "magcloud.chuyong.kr"
+    - "chois-backend-core.choisproject.chuyong.kr"
   gateways:
     - chois-backend-core
   http:
