@@ -21,7 +21,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: chois-backend-core-secret
-                  key: flyway-url
+                  key: mysql-url
             - name: MYSQL_USERNAME
               valueFrom:
                 secretKeyRef:
