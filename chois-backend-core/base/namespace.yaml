@@ -4,3 +4,4 @@ metadata:
   name: chois
   labels:
     name: chois
+    istio-injection: enabled
