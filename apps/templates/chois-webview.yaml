@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: chois-webview
+    namespace: chois
     server: 'https://kubernetes.default.svc'
   source:
     path: chois-webview/overlays/prod
