@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: chois-webview
-  namespace: chois-webview
+  namespace: chois
 spec:
   selector:
     istio: ingressgateway

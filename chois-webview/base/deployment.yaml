@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: chois-webview
-  namespace: chois-webview
+  namespace: chois
 spec:
   replicas: 1
   selector:

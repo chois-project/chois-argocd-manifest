@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: chois-webview
-  labels:
-    name: chois-webview
-    istio-injection: enabled
