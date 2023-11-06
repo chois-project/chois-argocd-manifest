@@ -13,6 +13,7 @@ spec:
         protocol: HTTP
       hosts:
         - "chois-backend-bff.choisproject.chuyong.kr"
+        - "gateway.choisproject.kr"
       tls:
         httpsRedirect: true
     - port:
@@ -21,3 +22,4 @@ spec:
         protocol: HTTP
       hosts:
         - 'chois-backend-bff.choisproject.chuyong.kr'
+        - "gateway.choisproject.kr"

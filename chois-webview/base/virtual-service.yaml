@@ -6,6 +6,7 @@ metadata:
 spec:
   hosts:
     - "webview.choisproject.chuyong.kr"
+    - "webview.choisproject.kr"
   gateways:
     - chois-webview
   http:

@@ -6,6 +6,7 @@ metadata:
 spec:
   hosts:
     - "chois-backend-bff.choisproject.chuyong.kr"
+    - "gateway.choisproject.kr"
   gateways:
     - chois-backend-bff
   http:

@@ -13,6 +13,7 @@ spec:
         protocol: HTTP
       hosts:
         - "webview.choisproject.chuyong.kr"
+        - "webview.choisproject.kr"
       tls:
         httpsRedirect: true
     - port:
@@ -21,3 +22,4 @@ spec:
         protocol: HTTP
       hosts:
         - 'webview.choisproject.chuyong.kr'
+        - 'webview.choisproject.kr'
